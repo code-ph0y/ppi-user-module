@@ -5,7 +5,6 @@ use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
 {
-
     public function getAutoloaderConfig()
     {
         return array(
