@@ -5,6 +5,18 @@ use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
 {
+
+    public function getAutoloaderConfig()
+    {
+        return array(
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/',
+                ),
+            ),
+        );
+    }
+
     protected $name = 'UserModule';
 
     /**
