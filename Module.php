@@ -6,12 +6,15 @@ use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function init($e)
+    public function getAutoloaderConfig()
     {
-        Autoload::add(__NAMESPACE__, dirname(__DIR__));
+        return array(
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/',
+                ),
+            ),
+        );
     }
 
     /**
