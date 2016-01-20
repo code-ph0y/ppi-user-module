@@ -1,11 +1,26 @@
 <?php
 namespace UserModule;
 
+use PPI\Framework\Autoload;
 use PPI\Framework\Module\AbstractModule;
 
 class Module extends AbstractModule
 {
-    protected $name = 'UserModule';
+    /**
+     * {@inheritdoc}
+     */
+    public function init($e)
+    {
+        Autoload::add(__NAMESPACE__, dirname(__DIR__));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'UserModule';
+    }
 
     /**
      * Get the configuration for this module
